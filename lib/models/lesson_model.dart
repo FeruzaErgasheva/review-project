@@ -9,13 +9,13 @@ class LessonModel {
   String title;
   String description;
   String videoUrl;
-  List<String> quizzes;
+  List<String?> quizzes;
 
   LessonModel({
     required this.course_id,
     required this.description,
     required this.id,
-    required this.quizzes,
+    this.quizzes=const [],
     required this.title,
     required this.videoUrl,
   });

@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             DrawerHeader(
+              padding: EdgeInsets.all(0),
               child: Image.network(
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQuU6m7jPRrh1bwj-Ql2D1MXnp-JsDAjz4OA&s",
                 fit: BoxFit.cover,

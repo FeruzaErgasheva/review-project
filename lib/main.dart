@@ -3,6 +3,7 @@ import 'package:lesson_50_review/controllers/courses_controller.dart';
 import 'package:lesson_50_review/providers/courses_provider.dart';
 import 'package:lesson_50_review/views/screens/courses_screen.dart';
 import 'package:lesson_50_review/views/screens/home_screen.dart';
+import 'package:lesson_50_review/views/screens/lessons_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   routes: {
                     "/": (ctx) => const HomeScreen(),
-                    "/courses": (ctx) => const CoursesScreen()
+                    "/courses": (ctx) => const CoursesScreen(),
+                    "/lessons":(ctx)=>LessonsScreen()
                   },
                 );
               },

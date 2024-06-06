@@ -12,26 +12,26 @@ class CoursesScreen extends StatefulWidget {
 
 class _CoursesScreenState extends State<CoursesScreen> {
   //when course card tapped
-  void onCardTapped() {}
+ 
 
-  void addProduct() async {
-    final data = await showDialog(
-      context: context,
-      builder: (context) => const AddCourseDialog(),
-    );
-    if (data != null) {
-      try {
-        // ignore: use_build_context_synchronously
-        CoursesProvider.of(context).addCourse(
-            imageUrl: data['imageUrl'],
-            title: data['title'],
-            description: data['description'],
-            price: data['price']);
-      } catch (e) {
-        print(e);
-      }
-    }
-  }
+  // void addProduct() async {
+  //   final data = await showDialog(
+  //     context: context,
+  //     builder: (context) => const AddCourseDialog(),
+  //   );
+  //   if (data != null) {
+  //     try {
+  //       // ignore: use_build_context_synchronously
+  //       CoursesProvider.of(context).addCourse(
+  //           imageUrl: data['imageUrl'],
+  //           title: data['title'],
+  //           description: data['description'],
+  //           price: data['price']);
+  //     } catch (e) {
+  //       print(e);
+  //     }
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,9 @@ class _CoursesScreenState extends State<CoursesScreen> {
                             itemBuilder: (context, index) {
                               return CourseCard(
                                 course: courses[index],
-                                onCardTapped: onCardTapped,
+                                onCardTapped: () {
+                                  Navigator.pushNamed(context, '/lessons',arguments: courses[index].id);
+                                },
                               );
                             },
                           ));

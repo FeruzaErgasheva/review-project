@@ -10,8 +10,10 @@ LessonModel _$LessonModelFromJson(Map<String, dynamic> json) => LessonModel(
       course_id: json['course_id'] as String,
       description: json['description'] as String,
       id: json['id'] as String,
-      quizzes:
-          (json['quizzes'] as List<dynamic>).map((e) => e as String).toList(),
+      quizzes: (json['quizzes'] as List<dynamic>?)
+              ?.map((e) => e as String?)
+              .toList() ??
+          const [],
       title: json['title'] as String,
       videoUrl: json['videoUrl'] as String,
     );
